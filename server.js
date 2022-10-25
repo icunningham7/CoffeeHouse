@@ -1,4 +1,3 @@
-const dotenv = require('dotenv');
 const path = require('path');
 const express = require('express');
 const session = require('express-session')
@@ -19,7 +18,7 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ auth, helpers });
 
 const sess = {
-    secret: process.env.SECRET,
+    secret: '63377433-3a0d-4cd2-8780-7575c16ce3f2',
     cookie: {},
     resave: false,
     saveUninitialized: true,
