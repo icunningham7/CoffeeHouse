@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "UofU-VIRT-FSF-PT-07-2022-U-LOLC-MWTH Module 14 Mini-Project: Crowdfunding App\r In this mini-project, you will work with a group to build a full-stack crowdfunding app using Node.js, Express.js, Sequelize, Handlebars.js, and MVC architecture.",
   "main": "server.js",
+  "engines": {
+    "node": "19.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
@@ -13,13 +16,16 @@
     "type": "git",
     "url": "git+https://github.com/icunningham7/CrowdEngine.git"
   },
-  "keywords": [],
+  "keywords": [
+    "heroku"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.3"
   },
   "dependencies": {
+    "@sweetalert2/theme-borderless": "^5.0.14",
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",
     "dotenv": "^8.2.0",
@@ -28,7 +34,8 @@
     "express-session": "^1.17.3",
     "handlebars": "^4.7.3",
     "mysql2": "^2.1.0",
-    "sequelize": "^6.25.3"
+    "sequelize": "^6.25.3",
+    "sweetalert2": "^11.6.7"
   },
   "bugs": {
     "url": "https://github.com/icunningham7/CrowdEngine/issues"

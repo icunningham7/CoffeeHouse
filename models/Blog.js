@@ -7,10 +7,10 @@ class Blog extends Model {}
 Blog.init(
     {
         id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
             allowNull: false,
-            primaryKey: true,
-            autoIncrement: true
+            primaryKey: true
         },
         title: {
             type: DataTypes.STRING,
@@ -20,8 +20,8 @@ Blog.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        created_by: {
-            type: DataTypes.INTEGER,
+        blog_created_by: {
+            type: DataTypes.UUID,
             references: {
                 model: 'user',
                 key: 'id'

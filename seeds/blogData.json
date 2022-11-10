@@ -1,22 +1,18 @@
 [
     {
         "title": "First Post!",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "created_by": 1
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
         "title": "Second Post!",
-        "content": "Donec quis volutpat neque. Mauris mollis tincidunt lorem, in venenatis neque malesuada non.",
-        "created_by": 1
+        "content": "Donec quis volutpat neque. Mauris mollis tincidunt lorem, in venenatis neque malesuada non."
     },
     {
         "title": "I'm on a Roll!",
-        "content": "Lorem in venenatis neque malesuada non.",
-        "created_by": 1
+        "content": "Lorem in venenatis neque malesuada non."
     },
     {
         "title": "Joining the platform",
-        "content": "Maecenas neque lectus, imperdiet non ultrices nec, egestas id est. ",
-        "created_by": 2
+        "content": "Maecenas neque lectus, imperdiet non ultrices nec, egestas id est. "
     }
 ]

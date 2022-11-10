@@ -1,17 +1,11 @@
 [
     {
-        "content": "First Comment!",
-        "blog_id": 1,
-        "created_by": 2
+        "content": "First Comment!"
     },
     {
-        "content": "Another thought",
-        "blog_id": 1,
-        "created_by": 2
+        "content": "Another thought"
     },
     {
-        "content": "I can comment!",
-        "blog_id": 1,
-        "created_by": 3
+        "content": "I can comment!"
     }
 ]
