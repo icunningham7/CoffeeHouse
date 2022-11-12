@@ -17,8 +17,10 @@ router.get('/', checkAuth, async (req, res) => {
 
 router.get('/:id', checkAuth, async (req, res) => {
     try {
+        console.log('in the blog id route');
         const blogs = await dataBlog.getBlogById(req.params.id);
-        res.render('homepage', {
+        console.log('rendering');
+        res.render('blog', {
             blogs,
             username: req.session.username,
             logged_in: req.session.logged_in

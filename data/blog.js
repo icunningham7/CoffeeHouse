@@ -3,6 +3,30 @@ const { User, Blog, Comment } = require("../models");
 
 module.exports = {
     getBlogById: async (blog_id) => {
+        const blogData = await Blog.findByPk(blog_id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['username']
+                },
+                {
+                    model: Comment,
+                    include: [
+                        {
+                            model: User,
+                            attributes: ['username', 'id']
+                        }
+                    ]
+                }
+            ]
+        });
+
+        if (!blogData) {
+            return res.status(404).json({ message: 'No blogs found!' });
+        }
+
+        const blogs = await blogData.get({ plain: true });
+        return blogs;
     },
 
     getBlogsByUser: async (user_id) => {
@@ -13,24 +37,40 @@ module.exports = {
             include: [
                 {
                     model: User,
-                    attributes:  [ 'username' ]
-                },
-                {
-                model: Comment
+                    attributes: ['username']
                 }
             ]
         });
 
         if (!blogData) {
-            throw new Error('No blogs found');
+            return res.status(404).json({ message: 'No blogs found!' });
         }
 
         const blogs = await blogData.map((blog) => {
-            console.log(blog);
             return blog.get({ plain: true });
         });
 
-        console.info(blogs);
+        return blogs;
+    },
+
+    getBlogs: async () => {
+        const blogData = await Blog.findAll({
+            include: [
+                {
+                    model: User,
+                    attributes: ['username']
+                }
+            ]
+        });
+
+        if (!blogData) {
+            return res.status(404).json({ message: 'No blogs found!' });
+        }
+
+        const blogs = await blogData.map((blog) => {
+            return blog.get({ plain: true });
+        });
+
         return blogs;
     }
 };

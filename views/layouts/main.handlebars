@@ -11,22 +11,28 @@
 
 <body>
   <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-      CoffeeHouse Blogs
-    </h1>
-    <!-- Only display the logout button if the user is logged in -->
-    {{#if logged_in}}
+    <a href="/">
+      <h1>
+        CoffeeHouse Blogs
+      </h1>
+    </a>
     <nav>
+      <a href="/">Home</a>
+      <a href="/api/blog">Dashboard</a>
+      <!-- Only display the logout button if the user is logged in -->
+      {{#if logged_in}}
       <button class="btn" id="logout">logout</button>
       <p>Hello {{username}}</p>
+      {{else}}
+      <a href="/login">Login</a>
+      {{/if}}
     </nav>
-    {{/if}}
   </header>
   <main class="container container-fluid mt-5">
     {{{ body }}}
   </main>
   <footer>
-      
+
   </footer>
 
   <!-- Only include the logout script if the user is logged in -->
