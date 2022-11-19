@@ -1,18 +1,13 @@
 <section class="card blog">
     <div class="row align-center mb-5">
         <div class="col-md-6">
-            <a href="/api/blog/{{id}}">
+            <a href="/blog/{{id}}">
                 <h2>{{title}}</h2>
             </a>
-            <h3>created by: {{user.username}}</h3>
+            <h3>by: <a href="/blog/user/{{user.id}}">{{user.username}}</a></h3>
         </div>
         <div class="col-md-6">
             <h4>created on: {{format_date createdAt}}</h4>
         </div>
-    </div>
-    <div class="comments">
-        {{#each comments as |comment| }}
-        {{> blog-comments}}
-        {{/each}}
     </div>
 </section>

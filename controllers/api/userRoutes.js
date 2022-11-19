@@ -17,15 +17,13 @@ router.post('/', async (req, res) => {
       res.status(200).send();
     });
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
 
-// Login route
+// Login post route
 router.post('/login', async (req, res) => {
   try {
-    console.log('attempting login');
     const dbUserData = await User.findOne({
       where: {
         username: req.body.username,
@@ -51,7 +49,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// Logout route
+// Logout post route
 router.post('/logout', (req, res) => {
   try {
     req.session.destroy(() => {

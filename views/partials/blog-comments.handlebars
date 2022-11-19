@@ -1,9 +1,13 @@
-    <div class="comment">
-                <h2>{{content}}</h2>
-            </a>
-            <h3>created by: {{user.username}}</h3>
-        </div>
-        <div class="col-md-6">
-            <h4>created on: {{format_date createdAt}}</h4>
-        </div>
+<div class="comment">
+    {{#if is_edited}} <p><i>(edited)</i></p>
+    {{/if}}
+        <h3>created by: {{user.username}}</h3>
+        <h4>created on: {{format_date createdAt}}</h4>
+    <div class="comment-id" data-comment-id="{{id}}">
+        <h2>{{content}}</h2>
+        {{#if (eq user_id user.id)}}
+        <button class="edit-comment">Edit your comment</button>
+        <button class="delete-comment">Delete your comment</button>
+        {{/if}}
     </div>
+</div>

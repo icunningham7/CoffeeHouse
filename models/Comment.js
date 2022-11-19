@@ -12,6 +12,11 @@ Comment.init(
             allowNull: false,
             primaryKey: true,
         },
+        is_edited: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+            allowNull: false
+        },
         content: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -20,7 +25,8 @@ Comment.init(
             type: DataTypes.UUID, 
             references: {
                 model: 'blog',
-                key: 'id'
+                key: 'id',
+                unique: false
             }
         },
         comment_created_by: {

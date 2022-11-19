@@ -1,13 +1,19 @@
 const { Comment } = require("../models");
+const { checkPermissions } = require("../utils/auth");
 
 
 module.exports = {
-    getComment: async (comment_id) => {
-console.log('in comments');
+    getCommentById: async (comment_id) => {
+        const commentData = await Comment.findByPk(comment_id);
+        if (!commentData) {
+            return res.status(404).json({ message: 'No comment found' });
+        }
+        const comment = commentData.get({ plain: true });
+
+        return comment;
     },
 
     getCommentsByUser: async (user_id) => {
-        console.log('in get comments');
         const commentData = await Comment.findAll({
             where: {
                 comment_created_by: user_id
@@ -22,7 +28,6 @@ console.log('in comments');
             return comment.get({ plain: true });
         });
 
-        console.info(comments);
         return comments;
     }
 };

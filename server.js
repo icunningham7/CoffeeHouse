@@ -21,7 +21,7 @@ const hbs = exphbs.create({ auth, helpers });
 const secret = process.env.SESSION_SECRET
 const sess = {
     secret: '63377433-3a0d-4cd2-8780-7575c16ce3f2',
-    cookie: {},
+    cookie: { expires: 5 * 60 * 10000 },
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
@@ -41,5 +41,5 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
+    app.listen(PORT, () => console.info(`Now listening on ${PORT}`));
 });

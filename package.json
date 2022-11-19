@@ -22,7 +22,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.3",
+    "tailwindcss": "^3.2.4"
   },
   "dependencies": {
     "@sweetalert2/theme-borderless": "^5.0.14",

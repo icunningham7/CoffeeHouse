@@ -7,25 +7,31 @@ module.exports = {
             include: [
                 {
                     model: User,
-                    attributes: ['username']
+                    attributes: ['username', 'id']
                 },
                 {
                     model: Comment,
                     include: [
                         {
                             model: User,
-                            attributes: ['username', 'id']
-                        }
-                    ]
-                }
+                            attributes: ['username', 'id'],
+                        },
+                    ],
+                },
+
+            ],
+            order: [
+                [Comment, 'createdAt', 'ASC']
             ]
         });
+
 
         if (!blogData) {
             return res.status(404).json({ message: 'No blogs found!' });
         }
 
         const blogs = await blogData.get({ plain: true });
+
         return blogs;
     },
 
@@ -37,9 +43,12 @@ module.exports = {
             include: [
                 {
                     model: User,
-                    attributes: ['username']
+                    attributes: ['username', 'id']
                 }
-            ]
+            ],
+            order: [
+                ['createdAt', 'DESC']
+            ],
         });
 
         if (!blogData) {
@@ -58,9 +67,12 @@ module.exports = {
             include: [
                 {
                     model: User,
-                    attributes: ['username']
+                    attributes: ['username', 'id']
                 }
-            ]
+            ],
+            order: [
+                ['createdAt', 'DESC']
+            ],
         });
 
         if (!blogData) {

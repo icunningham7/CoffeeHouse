@@ -18,7 +18,7 @@ const seedDatabase = async () => {
         return user.get({ plain: true });
     })
 
-console.log(`\n\n\n FINISHED USERS \n\n\n\n`);
+console.info(`\n\n\n FINISHED USERS \n\n\n\n`);
     
     let blogs;
 
@@ -34,7 +34,7 @@ console.log(`\n\n\n FINISHED USERS \n\n\n\n`);
         });
     };
 
-console.log(`\n\n\n FINISHED BLOGS \n\n\n\n`);
+console.info(`\n\n\n FINISHED BLOGS \n\n\n\n`);
 
     for (comment of commentData) {
         await Comment.create({
@@ -50,7 +50,7 @@ console.log(`\n\n\n FINISHED BLOGS \n\n\n\n`);
     }
 
 
-console.log(`\n\n\n FINISHED COMMENTS \n\n\n\n`);
+console.info(`\n\n\n FINISHED COMMENTS \n\n\n\n`);
 
     process.exit(0);
 };

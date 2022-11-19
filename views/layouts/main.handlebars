@@ -18,11 +18,13 @@
     </a>
     <nav>
       <a href="/">Home</a>
-      <a href="/api/blog">Dashboard</a>
+      <a href="/blog">Dashboard</a>
       <!-- Only display the logout button if the user is logged in -->
       {{#if logged_in}}
-      <button class="btn" id="logout">logout</button>
+      <button class="btn" onclick="location.href='/new';" id="new-blog">Create a Blog Post</button>
+
       <p>Hello {{username}}</p>
+      <button class="btn" id="logout">logout</button>
       {{else}}
       <a href="/login">Login</a>
       {{/if}}
@@ -38,6 +40,8 @@
   <!-- Only include the logout script if the user is logged in -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
+  <script src="/js/commentHandler.js"></script>
+  <script src="/js/blogHandler.js"></script>
   {{/if}}
 </body>
 
