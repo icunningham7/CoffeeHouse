@@ -18,7 +18,7 @@ Comment.init(
             allowNull: false
         },
         content: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT('medium'),
             allowNull: false,
         },
         blog_id: {

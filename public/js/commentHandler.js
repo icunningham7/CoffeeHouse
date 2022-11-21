@@ -12,7 +12,7 @@ const commentError = (operation = 'get') => {
 
 const revealCommentForm = async (event) => {
     event.preventDefault();
-    const addComment = document.querySelector('#add-comment-form');
+    const addComment = document.querySelector('#add-comment-container');
     addComment.classList.remove('hidden');
     document.querySelector('#add-comment').classList.add('hidden');
 };
@@ -22,20 +22,24 @@ const revealCommentEditor = async (event) => {
 
     const commentId = event.target.closest('.comment-id').dataset.commentId;
     const commentField = event.target.closest('.comment-id');
-    const comment = event.target.closest('.comment-id').querySelector('h2');
+    const comment = event.target.closest('.comment-id').querySelector('.comment-text');
     const commentText = comment.textContent;
     const commentForm = document.createElement('form');
+    commentForm.classList.add('flex', 'flex-col');
     const commentFormLabel = document.createElement('label');
     commentFormLabel.setAttribute('for', 'edit-comment-field');
-    const commentFormField = document.createElement('input');
+    commentFormLabel.textContent = 'Comment:';
+
+    const commentFormField = document.createElement('textarea');
     commentFormField.setAttribute('id', 'edit-comment-field');
     commentFormField.setAttribute('data-comment-id', commentId);
     commentFormField.setAttribute('type', 'text');
     commentFormField.setAttribute('name', 'edit-comment');
+    commentFormField.classList.add('w-full', 'h-80', 'edit-comment');
     commentFormField.required = true;
     commentFormField.value = commentText;
     const commentFormSubmitBtn = document.createElement('button');
-    commentFormSubmitBtn.classList.add('btn', 'btn-primary');
+    commentFormSubmitBtn.classList.add('self-center', 'rounded', 'p-2', 'm-2', 'bg-teal-600', 'hover:bg-teal-800', 'hover:outline', 'hover:outline-2', 'hover:outline-offset-4', 'hover:outline-teal-600/50', 'text-3xl', 'text-[#f6f6f2]',);
     commentFormSubmitBtn.setAttribute('type', 'submit');
     commentFormSubmitBtn.textContent = 'Submit';
     commentField.innerHTML = '';

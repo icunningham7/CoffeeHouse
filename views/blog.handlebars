@@ -1,31 +1,44 @@
-<section class="card blog-card">
-    <div class="card-head">
-        <div id='blog' data-blog-id="{{blog.id}}">
-            <h2 class="title">{{blog.title}}</h2>
-            <h3>by: {{blog.user.username}}</h3>
-            <h4>created on: {{format_date blog.createdAt}}</h4>
-            {{#if (eq user_id blog.user.id)}}
-            <button class="edit-blog">Edit your post</button>
-            <button class="delete-blog">Delete your post</button>
-            {{/if}}
+<section class="blog">
+    <div id='blog' data-blog-id="{{blog.id}}">
+        <div>
+            <h1 class="title text-center capitalize text-6xl lg:text-8xl underline decoration-4">{{blog.title}}</h1>
+            <div class="flex flex-row relative w-4/5 mx-auto">
+                <div class="w-full my-4">
+                    <a href="/blog/user/{{blog.user.id}}">
+                        <p class="capitalize">by: {{blog.user.username}}</p>
+                    </a>
+                    <p class="italic">{{format_date blog.createdAt}}</p>
+                </div>
+                {{#if (eq user_id blog.user.id)}}
+                <div class="absolute my-4 right-0">
+                    <p class="inline pr-2 pointer edit-blog"><i class="fa-regular fa-pen-to-square fa-lg"></i>Edit</p>
+                    <p class="inline pointer delete-blog"><i class="fa-regular fa-trash-can fa-lg"></i>Delete</p>
+                </div>
+                {{/if}}
+            </div>
         </div>
         <div>
         </div>
-        <div class="article">{{blog.content}}</div>
+        <div class="article w-4/5 mx-auto whitespace-pre-line">{{blog.content}}</div>
     </div>
-    <div class="comments">
+    <div class="comments flex flex-col divide-y-2 divide-teal-600/50 border-t-4 border-teal-600/50 mt-4 w-4/5 mx-auto ">
         {{#each blog.comments as |comment| }}
         {{> blog-comments user_id=../user_id logged_in=../logged_in}}
         {{/each}}
         {{#if logged_in}}
-        <button id="add-comment">Add a comment</button>
-        <form class="add-comment hidden" id="add-comment-form">
-            <label for="new-comment"></label>
-            <input type="text" name="comment" id="new-comment" required>
-            <input type="hidden" name="blog-id" id="blog-id" data-blog-id="{{blog.id}}">
-            <button class="btn btn-primary" type="submit">submit</button>
-        </form>
-        {{/if}}
-    </div>
+        <button id="add-comment"
+            class="self-center rounded p-2 m-2 bg-teal-600 hover:bg-teal-800 hover:outline hover:outline-2 hover:outline-offset-4 hover:outline-teal-600/50 text-3xl text-[#f6f6f2]">Add
+            a comment</button>
+        <div  id="add-comment-container"
+            class="hidden form-container card flex flex-col divide-solid divide-y-2 divide-[#c2edce] rounded mx-2 my-4 lg:my-6 p-4 outline outline-2 outline-offset-2 outline-teal-600/50 hover:outline-4 hover:outline-teal-600">
+            <form class="add-comment flex flex-col" id="add-comment-form">
+                <label for="new-comment" class="text-2xl">Comment:</label>
+                <textarea type="text" name="comment" id="new-comment" class="form-input grow ml-4" required></textarea>
+                <input type="hidden" name="blog-id" id="blog-id" data-blog-id="{{blog.id}}">
+                <button class="self-center rounded p-2 m-2 bg-teal-600 hover:bg-teal-800 hover:outline hover:outline-2 hover:outline-offset-4 hover:outline-teal-600/50 text-3xl text-[#f6f6f2]" type="submit">submit</button>
+            </form>
+        </div>
+            {{/if}}
+        </div>
     </div>
 </section>

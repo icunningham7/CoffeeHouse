@@ -1,13 +1,13 @@
-<h2>Add a Blog Post</h2>
+<h1 class="title pb-5 text-center text-6xl lg:text-8xl">Add a Blog Post</h1>
 
 
-<div class="blog form-container card">
-  <form class="form blog-form" id="add-blog-form">
-    <label for="title">Title</label>
-    <input class="form-input" type="text" id="title" required/>
-    <label for="content">Content</label>
-    <textarea class="form-input textarea" id="content" spellcheck="true" required/>
+<div class="blog new-blog form-container card flex flex-col divide-solid divide-y-2 divide-[#c2edce] rounded mx-2 my-4 lg:my-6 p-4 outline outline-2 outline-offset-2 outline-teal-600/50 hover:outline-4 hover:outline-teal-600">
+  <form class="form blog-form flex flex-col" id="add-blog-form">
+    <label for="title" class="text-2xl">Title:</label>
+    <input class="form-input grow ml-4" type="text" id="title" required/>
+    <label for="content" class="text-2xl">Content:</label>
+    <textarea class="form-input textarea grow ml-4 h-80" id="content" spellcheck="true" required/>
     </textarea>
-    <button class="btn btn-primary" type="submit">Create</button>
+    <button class="self-center rounded p-2 m-2 bg-teal-600 hover:bg-teal-800 hover:outline hover:outline-2 hover:outline-offset-4 hover:outline-teal-600/50 text-3xl text-[#f6f6f2]" type="submit">Create</button>
   </form>
 </div>

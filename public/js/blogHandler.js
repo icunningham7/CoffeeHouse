@@ -19,29 +19,37 @@ const revealBlogEditor = async (event) => {
     const blogArticle = document.querySelector('.article').textContent;
 
     const blogForm = document.createElement('form');
+    blogForm.classList.add('flex', 'flex-col')
 
     const blogTitleLabel = document.createElement('label');
     blogTitleLabel.setAttribute('for', 'edit-blog-title');
+    blogTitleLabel.textContent = 'Title:';
+
+
     const blogTitleField = document.createElement('input');
     blogTitleField.setAttribute('id', 'edit-blog-title');
     blogTitleField.setAttribute('data-blog-id', blogId);
     blogTitleField.setAttribute('type', 'text');
     blogTitleField.setAttribute('name', 'edit-blog-title');
+    blogTitleField.classList.add('pb-4', 'mb-5');
     blogTitleField.required = true;
     blogTitleField.value = blogTitle;
 
     const blogArticleLabel = document.createElement('label');
     blogArticleLabel.setAttribute('for', 'edit-blog-article');
+    blogArticleLabel.textContent = 'Content:';
+
     const blogArticleField = document.createElement('textarea');
     blogArticleField.setAttribute('id', 'edit-blog-article');
     blogArticleField.classList.add('form-input', 'textarea');
     blogArticleField.setAttribute('spellcheck', 'true');
     blogArticleField.setAttribute('name', 'edit-blog-article');
+    blogArticleField.classList.add('pb-4', 'mb-5', 'h-[30rem]');
     blogArticleField.required = true;
     blogArticleField.value = blogArticle;
 
     const blogFormSubmitBtn = document.createElement('button');
-    blogFormSubmitBtn.classList.add('btn', 'btn-primary');
+    blogFormSubmitBtn.classList.add('self-center', 'rounded', 'p-2', 'm-2', 'bg-teal-600', 'hover:bg-teal-800', 'hover:outline', 'hover:outline-2', 'hover:outline-offset-4', 'hover:outline-teal-600/50', 'text-3xl', 'text-[#f6f6f2]');
     blogFormSubmitBtn.setAttribute('type', 'submit');
     blogFormSubmitBtn.textContent = 'Submit';
     blog.innerHTML = '';

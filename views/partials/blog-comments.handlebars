@@ -1,13 +1,19 @@
-<div class="comment">
-    {{#if is_edited}} <p><i>(edited)</i></p>
-    {{/if}}
-        <h3>created by: {{user.username}}</h3>
-        <h4>created on: {{format_date createdAt}}</h4>
-    <div class="comment-id" data-comment-id="{{id}}">
-        <h2>{{content}}</h2>
+<div class="comment comment-id w-4/5 py-3 mx-auto" data-comment-id="{{id}}">
+    <div class="flex flex-row relative">
+        <div class="w-full my-4">
+                    <a href="/blog/user/{{user.id}}">
+            <p class="inline capitalize pr-2">{{user.username}}</p>
+            </a>
+            <p class="inline italic">{{format_date createdAt}}</p> {{#if is_edited}} <p class="inline"><i>(edited)</i></p> {{/if}}
+        </div>
         {{#if (eq user_id user.id)}}
-        <button class="edit-comment">Edit your comment</button>
-        <button class="delete-comment">Delete your comment</button>
+        <div class="absolute my-4 right-0">
+            <p class="inline pr-2 pointer edit-comment"><i class="fa-regular fa-pen-to-square fa-lg"></i>Edit</p>
+            <p class="inline pointer delete-comment"><i class="fa-regular fa-trash-can fa-lg"></i>Delete</p>
+        </div>
         {{/if}}
+    </div>
+    <div class="" >
+        <p class="comment-text text-xl whitespace-pre-line">{{content}}</p>
     </div>
 </div>

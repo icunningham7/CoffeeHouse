@@ -5,32 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CoffeeHouse Blogs</title>
+  <script src="https://cdn.tailwindcss.com?plugins=line-clamp"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://kit.fontawesome.com/2439148d0e.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-  <header class="display-flex justify-space-between align-center p-2">
-    <a href="/">
-      <h1>
-        CoffeeHouse Blogs
-      </h1>
-    </a>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/blog">Dashboard</a>
+<body class="whitespace-normal py-4 px-5 bg-[#f6f6f2] font-sans text-lg text-teal-800 subpixel-antialiased">
+  <header class="fixed w-full top-0 left-0 flex flex-col lg:flex-row sm:justify-between content-end border-b-2 border-teal-600 bg-[#f6f6f2] text-teal-600">
+      <a href="/" class="inline-block whitespace-nowrap font-bold h-full py-3 text-transparent bg-clip-text bg-gradient-to-r from-teal-800 to-teal-600 text-5xl">CoffeeHouse Blogs</a>
+    <nav class="flex gap-x-3 pt-4 justify-end sm:self-end text-2xl">
+      <a href="/" class="rounded-md p-1 pb-2 hover:text-[#f6f6f2] hover:bg-teal-600">Home</a>
+      <a href="/blog" class="rounded-md p-1 pb-2 hover:text-[#f6f6f2] hover:bg-teal-600">Dashboard</a>
       <!-- Only display the logout button if the user is logged in -->
       {{#if logged_in}}
-      <button class="btn" onclick="location.href='/new';" id="new-blog">Create a Blog Post</button>
-
-      <p>Hello {{username}}</p>
-      <button class="btn" id="logout">logout</button>
+      <a  href='/new' id="new-blog" class="rounded-md p-1 pb-2 hover:text-[#f6f6f2] hover:bg-teal-600">Create a Blog Post</a>
+      <a  id="logout" class="rounded-md p-1 pb-2 hover:text-[#f6f6f2] hover:bg-teal-600">Logout</a>
       {{else}}
-      <a href="/login">Login</a>
+      <a href="/login" class="rounded-md p-1 pb-2 hover:text-[#f6f6f2] hover:bg-teal-600">Login</a>
       {{/if}}
     </nav>
   </header>
-  <main class="container container-fluid mt-5">
+  <main class="container mx-auto max-w-screen-xl  mt-40">
     {{{ body }}}
   </main>
   <footer>

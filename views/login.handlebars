@@ -1,26 +1,38 @@
-<h2>Login or Signup</h2>
+<h1 class="title pb-5 text-center text-6xl lg:text-8xl">Login or Signup</h1>
 
-<div class="signup form-container card">
-  <form class="form signup-form" id="signup-form">
-    <h3>Signup</h3>
-    <label for="username-signup">username:</label>
-    <input class="form-input" type="text" id="username-signup" autocomplete="username" required/>
-    <label for="password-signup">password:</label>
-    <input class="form-input" type="password" id="password-signup" autocomplete="new-password" required/>
-        <label for="password-confirm-signup">confirm password:</label>
-    <input class="form-input" type="password" id="password-confirm-signup" autocomplete="new-password" required/>
-    <button class="btn btn-primary" type="submit">signup</button>
+<div
+  class="signup form-container card flex flex-col divide-solid divide-y-2 divide-[#c2edce] rounded mx-2 my-4 lg:my-6 p-4 outline outline-2 outline-offset-2 outline-teal-600/50 hover:outline-4 hover:outline-teal-600">
+  <form class="form signup-form flex flex-col" id="signup-form">
+    <h2 class="text-center text-5xl lg:text-7xl pb-3.5">Signup</h2>
+    <div class="form-group flex flex-row my-2 mx-auto w-full">
+      <label for="username-signup" class="text-2xl">username:</label>
+      <input class="form-input grow ml-4" type="text" id="username-signup" autocomplete="username" required />
+    </div>
+    <div class="form-group flex flex-row my-2 mx-auto w-full">
+      <label for="password-signup" class="text-2xl">password:</label>
+      <input class="form-input grow ml-4" type="password" id="password-signup" autocomplete="new-password" required />
+    </div>
+    <div class="form-group flex flex-row my-2 mx-auto w-full">
+      <label for="password-confirm-signup" class="text-2xl">confirm:</label>
+      <input class="form-input grow ml-4" type="password" id="password-confirm-signup" autocomplete="new-password" required />
+    </div>
+    <button class="self-center rounded p-2 m-2 bg-teal-600 hover:bg-teal-800 hover:outline hover:outline-2 hover:outline-offset-4 hover:outline-teal-600/50 text-3xl text-[#f6f6f2]" type="submit">Signup</button>
   </form>
 </div>
 
-<div class="login form-container card">
-  <form class="form login-form" id="login-form">
-    <h3>Login</h3>
-    <label for="username-login">username:</label>
-    <input class="form-input" type="text" id="username-login" autocomplete="username" required/>
-    <label for="password-login">password:</label>
-    <input class="form-input" type="password" id="password-login" autocomplete="current-password" required/>
-    <button class="btn btn-primary" type="submit">login</button>
+<div
+  class="login form-container card flex flex-col divide-solid divide-y-2 divide-[#c2edce] rounded mx-2 my-4 lg:my-6 p-4 outline outline-2 outline-offset-2 outline-teal-600/50 hover:outline-4 hover:outline-teal-600">
+  <form class="form signup-form flex flex-col" id="login-form">
+    <h2 class="text-center text-5xl lg:text-7xl pb-3.5">Login</h2>
+    <div class="form-group flex flex-row my-2 mx-auto w-full">
+    <label for="username-login" class="text-2xl">username:</label>
+    <input class="form-input grow ml-4" type="text" id="username-login" autocomplete="username" required />
+    </div>
+    <div class="form-group flex flex-row my-2 mx-auto w-full">
+    <label for="password-login" class="text-2xl">password:</label>
+    <input class="form-input grow ml-4" type="password" id="password-login" autocomplete="current-password" required />
+    </div>
+    <button class="self-center rounded p-2 m-2 bg-teal-600 hover:bg-teal-800 hover:outline hover:outline-2 hover:outline-offset-4 hover:outline-teal-600/50 text-3xl text-[#f6f6f2]" type="submit">Login</button>
   </form>
 </div>
 

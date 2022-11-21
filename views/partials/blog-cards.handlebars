@@ -1,13 +1,16 @@
-<section class="card blog">
-    <div class="row align-center mb-5">
-        <div class="col-md-6">
-            <a href="/blog/{{id}}">
-                <h2>{{title}}</h2>
-            </a>
-            <h3>by: <a href="/blog/user/{{user.id}}">{{user.username}}</a></h3>
+<a href="/blog/{{id}}"
+    class="card flex flex-col divide-solid divide-y-2 divide-[#c2edce] rounded mx-2 my-4 lg:my-6 p-4 outline outline-2 outline-offset-2 outline-teal-600/50 hover:outline-4 hover:outline-teal-600">
+    <div class="card-header flex flex-row justify-between">
+        <div class="order-last">
+            <p>{{format_date createdAt}}</p>
         </div>
-        <div class="col-md-6">
-            <h4>created on: {{format_date createdAt}}</h4>
+        <div class="">
+            <h2 class="text-4xl uppercase">{{title}}</h2>
+            <p class="capitalize text-sm">by: {{user.username}}</p>
         </div>
+
     </div>
-</section>
+    <div class="line-clamp-5 pt-3 mb-3">
+        {{content}}
+    </div>
+</a>
